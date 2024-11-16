@@ -1,8 +1,11 @@
 package com.tp3.pruebas.dominio;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class Diagnostico {
     private String nombre;
     private List <Evolucion> evoluciones;

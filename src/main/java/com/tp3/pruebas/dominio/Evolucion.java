@@ -1,5 +1,8 @@
 package com.tp3.pruebas.dominio;
 
+import lombok.Getter;
+
+@Getter
 public class Evolucion {
     private String informe;
     private Doctor doctor;

@@ -1,7 +1,10 @@
 package com.tp3.pruebas.dominio;
 
+import lombok.Getter;
+
 import java.util.List;
 
+@Getter
 public class Paciente {
     private String dni;
     private String nombre;

@@ -1,9 +1,12 @@
 package com.tp3.pruebas.dominio;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Getter
 public class HistoriaClinica {
     private List<Diagnostico> diagnosticos;
 

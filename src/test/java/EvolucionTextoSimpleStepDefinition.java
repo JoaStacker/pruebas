@@ -40,6 +40,8 @@ public class EvolucionTextoSimpleStepDefinition {
         this.dniPaciente = null;
         this.diagnosticoElegido = null;
         this.pacienteResultante = null;
+
+        // SIMULAR UN REPOSITORIO
         this.repositorioPaciente = mock(RepositorioPaciente.class);
         this.sistemaClinica = new SistemaClinica(repositorioPaciente);
     }
