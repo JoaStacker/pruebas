@@ -5,7 +5,7 @@ Feature: Agregar una nueva evolucion con diagnostico previo.
   quiere añadir una nueva evolucion en la historia clinica del paciente eligiendo un diagnostico previo.
 
   Background: El doctor visualiza una historia clinica del paciente.
-    Given el doctor con "Dr. Joaquin Sarmiento" ha iniciado sesion
+    Given el doctor con "Dr. Palpatine" ha iniciado sesion
     And ha buscado la historia clinica del paciente "123456" que posee los siguientes diagnosticos:
       | Angina    |
       | Gastritis |

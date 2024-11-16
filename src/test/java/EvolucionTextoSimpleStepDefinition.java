@@ -49,7 +49,6 @@ public class EvolucionTextoSimpleStepDefinition {
     @Given("el doctor con {string} ha iniciado sesion")
     public void elDoctorConHaIniciadoSesion(String nombreDoctor) {
         doctor = new Doctor(nombreDoctor);
-
     }
 
     @And("ha buscado la historia clinica del paciente {string} que posee los siguientes diagnosticos:")

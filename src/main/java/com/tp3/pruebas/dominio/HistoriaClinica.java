@@ -28,4 +28,9 @@ public class HistoriaClinica {
         Diagnostico diagnostico = buscarDiagnostico(diagnosticoElegido);
         diagnostico.agregarEvolucion(doctor, informe);
     }
+
+    public void agregarDiagnostico(String diagnosticoElegido){
+        Diagnostico diagnostico = new Diagnostico(diagnosticoElegido);
+        this.diagnosticos.add(diagnostico);
+    }
 }

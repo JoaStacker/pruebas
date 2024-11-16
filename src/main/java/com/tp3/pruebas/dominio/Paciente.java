@@ -23,4 +23,8 @@ public class Paciente {
     public void agregarEvolucion(String diagnosticoElegido, Doctor doctor, String informe){
         this.historiaClinica.agregarEvolucion(diagnosticoElegido, doctor, informe);
     }
+
+    public void agregarDiagnostico(String diagnosticoElegido){
+        this.historiaClinica.agregarDiagnostico(diagnosticoElegido);
+    }
 }

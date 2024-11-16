@@ -25,4 +25,12 @@ public class SistemaClinica {
 
         return paciente;
     }
+
+    public Paciente agregarDiagnosticoAHistoriaClinica(String dniPaciente, String diagnosticoElegido){
+        Paciente paciente = repositorioPaciente.buscarPaciente(dniPaciente).orElseThrow(() -> new RuntimeException("Paciente inexistente"));
+        paciente.agregarDiagnostico(diagnosticoElegido);
+        repositorioPaciente.actualizarPaciente(paciente);
+
+        return paciente;
+    }
 }
