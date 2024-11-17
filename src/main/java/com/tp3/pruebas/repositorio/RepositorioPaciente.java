@@ -35,10 +35,10 @@ public class RepositorioPaciente {
     public void actualizarPaciente(Paciente paciente){}
 
     private void cargarPacientes(){
-//        pacientes.put("123456", new Paciente("123456", "Anakin Skywalker", List.of("Angina")));
+        pacientes.put("123456", new Paciente("123456", "Anakin Skywalker", List.of("Angina")));
     }
 
     private void cargarDiagnosticosCIE(){
-//        pacientes.put(new Diagnostico("Angina"));
+        diagnosticosCIE.add(new Diagnostico("Angina"));
     }
 }
