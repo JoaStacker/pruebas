@@ -24,9 +24,10 @@ public class HistoriaClinica {
                 .orElseThrow(() -> new RuntimeException("Diagnostico no encontrado."));
     }
 
-    public void agregarEvolucion(String diagnosticoElegido, Doctor doctor, String informe){
+    public void agregarEvolucion(String diagnosticoElegido, Doctor doctor, String informe,
+                                 String textoPedido, RecetaDigital recetaDigital){
         Diagnostico diagnostico = buscarDiagnostico(diagnosticoElegido);
-        diagnostico.agregarEvolucion(doctor, informe);
+        diagnostico.agregarEvolucion(doctor, informe, textoPedido, recetaDigital);
     }
 
     public void agregarDiagnostico(String diagnosticoElegido){

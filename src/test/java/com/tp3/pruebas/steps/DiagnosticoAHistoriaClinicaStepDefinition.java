@@ -1,7 +1,8 @@
+package com.tp3.pruebas.steps;
+
 import com.tp3.pruebas.app.SistemaClinica;
 import com.tp3.pruebas.dominio.Diagnostico;
 import com.tp3.pruebas.dominio.Doctor;
-import com.tp3.pruebas.dominio.HistoriaClinica;
 import com.tp3.pruebas.dominio.Paciente;
 import com.tp3.pruebas.repositorio.RepositorioPaciente;
 import io.cucumber.java.Before;

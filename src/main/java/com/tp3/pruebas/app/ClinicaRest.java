@@ -24,7 +24,10 @@ public class ClinicaRest {
                 doctorPrueba,
                 dniPaciente,
                 nombreDiagnostico,
-                JsonParser.informeDesdeJson(json));
+                JsonParser.informeDesdeJson(json),
+                null,
+                null
+        );
 
         return new ResponseEntity<>(JsonParser.pacienteAJson(paciente), HttpStatus.CREATED);
     }

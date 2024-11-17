@@ -1,12 +1,11 @@
 package com.tp3.pruebas.app;
 
-import com.tp3.pruebas.dominio.Diagnostico;
-import com.tp3.pruebas.dominio.Doctor;
-import com.tp3.pruebas.dominio.Paciente;
+import com.tp3.pruebas.dominio.*;
 import com.tp3.pruebas.repositorio.RepositorioPaciente;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SistemaClinica {
@@ -21,9 +20,10 @@ public class SistemaClinica {
       return this.repositorioPaciente.buscarPaciente(dniPaciente).orElseThrow(() -> new RuntimeException("Paciente no encontrado"));
     }
 
-    public Paciente agregarEvolucion(Doctor doctor, String dniPaciente, String diagnosticoElegido, String informe){
+    public Paciente agregarEvolucion(Doctor doctor, String dniPaciente, String diagnosticoElegido, String informe,
+                                     String textoPedido, RecetaDigital recetaDigital){
         Paciente paciente = repositorioPaciente.buscarPaciente(dniPaciente).orElseThrow(() -> new RuntimeException("Paciente inexistente"));
-        paciente.agregarEvolucion(diagnosticoElegido, doctor, informe);
+        paciente.agregarEvolucion(diagnosticoElegido, doctor, informe, textoPedido, recetaDigital);
         repositorioPaciente.actualizarPaciente(paciente);
 
         return paciente;

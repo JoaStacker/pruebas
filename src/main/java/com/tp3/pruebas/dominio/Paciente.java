@@ -1,8 +1,8 @@
 package com.tp3.pruebas.dominio;
 
 import lombok.Getter;
-
 import java.util.List;
+import java.util.Optional;
 
 @Getter
 public class Paciente {
@@ -20,8 +20,9 @@ public class Paciente {
         return this.historiaClinica.buscarDiagnostico(nombreDiagnostico);
     }
 
-    public void agregarEvolucion(String diagnosticoElegido, Doctor doctor, String informe){
-        this.historiaClinica.agregarEvolucion(diagnosticoElegido, doctor, informe);
+    public void agregarEvolucion(String diagnosticoElegido, Doctor doctor, String informe,
+                                 String textoPedido, RecetaDigital recetaDigital){
+        this.historiaClinica.agregarEvolucion(diagnosticoElegido, doctor, informe, textoPedido, recetaDigital);
     }
 
     public void agregarDiagnostico(String diagnosticoElegido){
