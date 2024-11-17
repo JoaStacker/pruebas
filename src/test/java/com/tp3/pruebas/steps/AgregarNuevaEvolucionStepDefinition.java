@@ -6,13 +6,16 @@ import com.tp3.pruebas.dominio.Doctor;
 import com.tp3.pruebas.dominio.Paciente;
 import com.tp3.pruebas.dominio.PedidoLaboratorio;
 import com.tp3.pruebas.repositorio.RepositorioPaciente;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.it.Ma;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import static org.mockito.Mockito.*;
@@ -28,6 +31,8 @@ public class AgregarNuevaEvolucionStepDefinition {
     private String textoPedido;
     private String diagnosticoElegido;
     private Paciente pacienteResultante;
+    private List<String> medicamentos;
+    private List<Integer> cantidades;
 
     // Equivale a SERVICIO -> CONTROLADOR DE CASO DE USO.
     private SistemaClinica sistemaClinica;
@@ -105,14 +110,14 @@ public class AgregarNuevaEvolucionStepDefinition {
         
     }
 
-    @And("los medicamentos:")
-    public void losMedicamentos() {
-        
-    }
-
-    @And("las cantidades de cada uno:")
-    public void lasCantidadesDeCadaUno() {
-
+    @And("los medicamentos y las cantidades de cada uno:")
+    public void losMedicamentosYLasCantidadesDeCadaUno(DataTable medicamentos) {
+        List<Map<String, String>> rows = medicamentos.asMaps(String.class, String.class);
+        for (Map<String, String> row : rows) {
+            String medicamento = row.get("Medicamento");
+            String cantidad = row.get("Cantidad");
+            System.out.println("Medicamento: " + medicamento + ", Cantidad: " + cantidad);
+        }
     }
 
     @And("el doctor guarda la nueva evolucion con receta digital")
@@ -123,4 +128,5 @@ public class AgregarNuevaEvolucionStepDefinition {
     @Then("se debe registrar la evolucion en la historia clinica del paciente con el diagnostico, la receta digital y el doctor.")
     public void seDebeRegistrarLaEvolucionEnLaHistoriaClinicaDelPacienteConElDiagnosticoLaRecetaDigitalYElDoctor() {
     }
+
 }
