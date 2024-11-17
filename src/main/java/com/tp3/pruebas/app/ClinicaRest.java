@@ -34,4 +34,15 @@ public class ClinicaRest {
         var paciente = this.sistemaClinica.buscarPaciente(dniPaciente);
         return new ResponseEntity<>(JsonParser.pacienteAJson(paciente), HttpStatus.OK);
     }
+
+
+    @PostMapping("/paciente/{dniPaciente}/diagnostico/{nombreDiagnostico}/historia-clinica")
+    public ResponseEntity<JsonNode> agregarDiagnosticoAHistoriaClinica(@PathVariable String dniPaciente,
+                                                     @PathVariable String nombreDiagnostico){
+        var paciente = this.sistemaClinica.agregarDiagnosticoAHistoriaClinica(
+                dniPaciente,
+                nombreDiagnostico);
+
+        return new ResponseEntity<>(JsonParser.pacienteAJson(paciente), HttpStatus.CREATED);
+    }
 }
