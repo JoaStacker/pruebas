@@ -25,9 +25,9 @@ public class HistoriaClinica {
     }
 
     public void agregarEvolucion(String diagnosticoElegido, Doctor doctor, String informe,
-                                 String textoPedido, RecetaDigital recetaDigital){
+                                 String textoPedido, List<Medicamento> listaMedicamentos){
         Diagnostico diagnostico = buscarDiagnostico(diagnosticoElegido);
-        diagnostico.agregarEvolucion(doctor, informe, textoPedido, recetaDigital);
+        diagnostico.agregarEvolucion(doctor, informe, textoPedido, listaMedicamentos);
     }
 
     public void agregarDiagnostico(String diagnosticoElegido){

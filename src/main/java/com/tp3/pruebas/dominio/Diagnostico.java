@@ -24,8 +24,8 @@ public class Diagnostico {
                 .anyMatch(evolucion -> evolucion.tiene(doctor, informe));
     }
 
-    public void agregarEvolucion(Doctor doctor, String informe, String textoPedido, RecetaDigital recetaDigital){
-        Evolucion evolucion = new Evolucion(informe, doctor, textoPedido, recetaDigital);
+    public void agregarEvolucion(Doctor doctor, String informe, String textoPedido, List<Medicamento> listaMedicamentos){
+        Evolucion evolucion = new Evolucion(informe, doctor, textoPedido, listaMedicamentos);
         evoluciones.add(evolucion);
     }
 }

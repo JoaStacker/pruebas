@@ -21,9 +21,9 @@ public class SistemaClinica {
     }
 
     public Paciente agregarEvolucion(Doctor doctor, String dniPaciente, String diagnosticoElegido, String informe,
-                                     String textoPedido, RecetaDigital recetaDigital){
+                                     String textoPedido, List<Medicamento> listaMedicamentos){
         Paciente paciente = repositorioPaciente.buscarPaciente(dniPaciente).orElseThrow(() -> new RuntimeException("Paciente inexistente"));
-        paciente.agregarEvolucion(diagnosticoElegido, doctor, informe, textoPedido, recetaDigital);
+        paciente.agregarEvolucion(diagnosticoElegido, doctor, informe, textoPedido, listaMedicamentos);
         repositorioPaciente.actualizarPaciente(paciente);
 
         return paciente;

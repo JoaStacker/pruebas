@@ -21,8 +21,8 @@ public class Paciente {
     }
 
     public void agregarEvolucion(String diagnosticoElegido, Doctor doctor, String informe,
-                                 String textoPedido, RecetaDigital recetaDigital){
-        this.historiaClinica.agregarEvolucion(diagnosticoElegido, doctor, informe, textoPedido, recetaDigital);
+                                 String textoPedido, List<Medicamento> listaMedicamentos){
+        this.historiaClinica.agregarEvolucion(diagnosticoElegido, doctor, informe, textoPedido, listaMedicamentos);
     }
 
     public void agregarDiagnostico(String diagnosticoElegido){

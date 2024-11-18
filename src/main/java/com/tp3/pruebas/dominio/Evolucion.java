@@ -2,6 +2,9 @@ package com.tp3.pruebas.dominio;
 
 import lombok.Getter;
 
+import java.util.List;
+import java.util.Map;
+
 @Getter
 public class Evolucion {
     private String informe;
@@ -9,11 +12,19 @@ public class Evolucion {
     private PedidoLaboratorio pedidoLaboratorio;
     private RecetaDigital recetaDigital;
 
-    public Evolucion(String informe, Doctor doctor, String textoPedido, RecetaDigital recetaDigital) {
+    public Evolucion(String informe, Doctor doctor, String textoPedido, List<Medicamento> listaMedicamentos) {
         this.informe = informe;
         this.doctor = doctor;
-        this.pedidoLaboratorio = new PedidoLaboratorio(textoPedido);
-        this.recetaDigital = recetaDigital;
+        if(textoPedido != null){
+            this.pedidoLaboratorio = new PedidoLaboratorio(textoPedido);
+        }else{
+            this.pedidoLaboratorio = null;
+        }
+        if(listaMedicamentos != null) {
+            this.recetaDigital = new RecetaDigital(listaMedicamentos);
+        }else{
+            this.recetaDigital = null;
+        }
     }
 
     public boolean tiene(Doctor doctor, String informe){

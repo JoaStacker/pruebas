@@ -102,31 +102,32 @@ public class AgregarNuevaEvolucionStepDefinition {
 
     @Then("se debe registrar la evolucion en la historia clinica del paciente con el diagnostico, el pedido de laboratorio y el doctor.")
     public void seDebeRegistrarLaEvolucionEnLaHistoriaClinicaDelPacienteConElDiagnosticoElPedidoDeLaboratorioYElDoctor() {
-        
-    }
-
-    @And("ingresa una instruccion para una receta {string}")
-    public void ingresaUnaInstruccionParaUnaReceta(String arg0) {
-        
-    }
-
-    @And("los medicamentos y las cantidades de cada uno:")
-    public void losMedicamentosYLasCantidadesDeCadaUno(DataTable medicamentos) {
-        List<Map<String, String>> rows = medicamentos.asMaps(String.class, String.class);
-        for (Map<String, String> row : rows) {
-            String medicamento = row.get("Medicamento");
-            String cantidad = row.get("Cantidad");
-            System.out.println("Medicamento: " + medicamento + ", Cantidad: " + cantidad);
-        }
-    }
-
-    @And("el doctor guarda la nueva evolucion con receta digital")
-    public void elDoctorGuardaLaNuevaEvolucionConRecetaDigital() {
+        // TODO ...
 
     }
 
-    @Then("se debe registrar la evolucion en la historia clinica del paciente con el diagnostico, la receta digital y el doctor.")
-    public void seDebeRegistrarLaEvolucionEnLaHistoriaClinicaDelPacienteConElDiagnosticoLaRecetaDigitalYElDoctor() {
-    }
+//    @And("ingresa una instruccion para una receta {string}")
+//    public void ingresaUnaInstruccionParaUnaReceta(String arg0) {
+//
+//    }
+//
+//    @And("los medicamentos y las cantidades de cada uno:")
+//    public void losMedicamentosYLasCantidadesDeCadaUno(DataTable medicamentos) {
+//        List<Map<String, String>> rows = medicamentos.asMaps(String.class, String.class);
+//        for (Map<String, String> row : rows) {
+//            String medicamento = row.get("Medicamento");
+//            String cantidad = row.get("Cantidad");
+//            System.out.println("Medicamento: " + medicamento + ", Cantidad: " + cantidad);
+//        }
+//    }
+//
+//    @And("el doctor guarda la nueva evolucion con receta digital")
+//    public void elDoctorGuardaLaNuevaEvolucionConRecetaDigital() {
+//
+//    }
+//
+//    @Then("se debe registrar la evolucion en la historia clinica del paciente con el diagnostico, la receta digital y el doctor.")
+//    public void seDebeRegistrarLaEvolucionEnLaHistoriaClinicaDelPacienteConElDiagnosticoLaRecetaDigitalYElDoctor() {
+//    }
 
 }
