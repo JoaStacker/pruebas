@@ -53,7 +53,7 @@ class DiagnosticoTest {
 		//Assert -> Corroborar
 		assertTrue(tieneEvolucion);
 		assertFalse(diagnostico.getEvoluciones().isEmpty());
-		assertEquals(diagnostico.getEvoluciones().getFirst().getInforme(), informe);
+		assertEquals(diagnostico.getEvoluciones().get(0).getInforme(), informe);
 	}
 
 	@Test
@@ -71,7 +71,7 @@ class DiagnosticoTest {
 		diagnostico.agregarEvolucion(doctor, informe, textoPedido, null);
 
 		//Assert -> Corroborar
-		assertEquals(diagnostico.getEvoluciones().getFirst().getPedidoLaboratorio().getTextoPedido(), textoPedido);
+		assertEquals(diagnostico.getEvoluciones().get(0).getPedidoLaboratorio().getTextoPedido(), textoPedido);
 	}
 
 	@Test
@@ -89,7 +89,7 @@ class DiagnosticoTest {
 
 		//Act -> Ejecutar
 		diagnostico.agregarEvolucion(doctor, informe, null, medicamentosList);
-		List<Medicamento> medicamentoListReal = diagnostico.getEvoluciones().getFirst().getRecetaDigital().getMedicamentos();
+		List<Medicamento> medicamentoListReal = diagnostico.getEvoluciones().get(0).getRecetaDigital().getMedicamentos();
 
 		//Assert -> Corroborar
 		// Verificar que la receta digital no esté vacía
