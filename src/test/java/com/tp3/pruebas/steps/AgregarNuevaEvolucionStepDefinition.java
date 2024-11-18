@@ -102,13 +102,15 @@ public class AgregarNuevaEvolucionStepDefinition {
 
     @Then("se debe registrar la evolucion en la historia clinica del paciente con el diagnostico, el pedido de laboratorio y el doctor.")
     public void seDebeRegistrarLaEvolucionEnLaHistoriaClinicaDelPacienteConElDiagnosticoElPedidoDeLaboratorioYElDoctor() {
-        // TODO ...
-
+        Diagnostico diagnostico = pacienteResultante.buscarDiagnostico(diagnosticoElegido);
+        assertThat(diagnostico.tieneEvolucion(doctor, informe)).isTrue();
+        assertThat(diagnostico.getEvoluciones().get(0).getPedidoLaboratorio().getTextoPedido()).isEqualTo(this.textoPedido);
+        verify(repositorioPaciente, times(1)).actualizarPaciente(any());
     }
 
 //    @And("ingresa una instruccion para una receta {string}")
 //    public void ingresaUnaInstruccionParaUnaReceta(String arg0) {
-//
+//      TODO
 //    }
 //
 //    @And("los medicamentos y las cantidades de cada uno:")
@@ -123,11 +125,12 @@ public class AgregarNuevaEvolucionStepDefinition {
 //
 //    @And("el doctor guarda la nueva evolucion con receta digital")
 //    public void elDoctorGuardaLaNuevaEvolucionConRecetaDigital() {
-//
+//      TODO
 //    }
 //
 //    @Then("se debe registrar la evolucion en la historia clinica del paciente con el diagnostico, la receta digital y el doctor.")
 //    public void seDebeRegistrarLaEvolucionEnLaHistoriaClinicaDelPacienteConElDiagnosticoLaRecetaDigitalYElDoctor() {
+//      TODO
 //    }
 
 }

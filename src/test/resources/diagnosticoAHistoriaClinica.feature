@@ -12,7 +12,7 @@ Feature: Agregar un diagnostico a la historia clinica del paciente.
       | Covid    |
       | Neumonia |
 
-  Scenario: El doctor agrega un nuevo diagnostico.
+  Scenario: 1- El doctor agrega un nuevo diagnostico.
     When el doctor selecciona el diagnostico "Neumonia"
     And el doctor guarda el nuevo diagnostico
     Then se debe registrar el nuevo diagnostico en la historia clinica del paciente.
